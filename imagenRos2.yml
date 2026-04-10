@@ -1,0 +1,12 @@
+services:
+  contenedor_ros2:
+    image: imagen_ros2:humble
+    volumes:
+      - ./ros2_ws:/root/ros2_ws  # Mapea la carpeta local 'ros2_ws' al contenedor
+    stdin_open: true
+    tty: true
+    ports:
+      - "6080:6080"
+    security_opt:
+      - seccomp:unconfined
+      - apparmor:unconfined
